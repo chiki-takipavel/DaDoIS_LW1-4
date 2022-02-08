@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using BL.Services.Client;
-using BL.Services.Common;
-using BL.Services.Deposit;
-using BL.Services.Deposit.Models;
+using Services.Client;
+using Services.Common;
+using Services.Deposit;
+using Services.Deposit.Models;
 using Microsoft.Practices.Unity;
 using WebApplication.Infrastructure;
 using WebApplication.Models.ViewModels;
@@ -72,12 +72,12 @@ namespace WebApplication.Controllers
             try
             {
                 DepositService.WithdrawPercents(depositId);
-                return RedirectToAction("Details", new {depositId = depositId});
+                return RedirectToAction("Details", new { depositId });
             }
             catch (Exception ex)
             {
                 this.ModelState.AddModelError("", ex);
-                return RedirectToAction("Details", new { depositId = depositId });
+                return RedirectToAction("Details", new { depositId });
             }
         }
 
@@ -87,12 +87,12 @@ namespace WebApplication.Controllers
             try
             {
                 DepositService.CloseDeposit(depositId);
-                return RedirectToAction("Details", new {depositId = depositId});
+                return RedirectToAction("Details", new { depositId });
             }
             catch (Exception ex)
             {
                 this.ModelState.AddModelError("", ex);
-                return RedirectToAction("Details", new {depositId = depositId});
+                return RedirectToAction("Details", new { depositId });
             }
         }
     }

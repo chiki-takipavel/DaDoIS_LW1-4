@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using AutoMapper;
-using BL.Services.Common;
-using BL.Services.Transaction;
+using Services.Common;
+using Services.Transaction;
 using Microsoft.Practices.Unity;
 using WebApplication.Infrastructure;
+using Services.Common.Model;
 
 namespace WebApplication.Controllers
 {
@@ -50,7 +47,7 @@ namespace WebApplication.Controllers
         public ActionResult DayTransactionsReport()
         {
             //var report = BankService.GenerateTransactionReport(SystemInformationService.CurrentBankDay);
-            BL.Services.Common.Model.TransactionReportModel report = new BL.Services.Common.Model.TransactionReportModel();
+            TransactionReportModel report = new Services.Common.Model.TransactionReportModel();
             
             return View("TransactionReport", report);
         }
@@ -61,7 +58,7 @@ namespace WebApplication.Controllers
             //    BankService.GenerateTransactionReport(SystemInformationService.CurrentBankDay == 0
             //        ? 0
             //        : SystemInformationService.CurrentBankDay - 1);
-            BL.Services.Common.Model.TransactionReportModel report = new BL.Services.Common.Model.TransactionReportModel();
+            TransactionReportModel report = new TransactionReportModel();
             return View("TransactionReport", report);
         }
 

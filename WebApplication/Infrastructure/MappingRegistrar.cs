@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using AutoMapper;
-using BL.Services.Client;
-using BL.Services.Client.Models;
-using BL.Services.Common;
-using BL.Services.Credit;
-using BL.Services.Credit.Models;
-using BL.Services.Deposit;
-using BL.Services.Deposit.Models;
+using Services.Client;
+using Services.Client.Models;
+using Services.Common;
+using Services.Credit;
+using Services.Credit.Models;
+using Services.Deposit;
+using Services.Deposit.Models;
 using WebApplication.Models.ViewModels;
 
 namespace WebApplication.Infrastructure
@@ -62,8 +62,8 @@ namespace WebApplication.Infrastructure
                     r => r.MapFrom(t => clientService.GetDisabilities().Select(y => y.Status)))
                 .ForMember(r => r.Citizenships,
                     r => r.MapFrom(t => clientService.GetCitizenships().Select(y => y.Country)))
-                .ForMember(r => r.Towns,
-                    r => r.MapFrom(t => clientService.GetTowns().Select(y => y.Name)))
+                .ForMember(r => r.Places,
+                    r => r.MapFrom(t => clientService.GetPlaces().Select(y => y.Name)))
                 .ForMember(r => r.MartialStatuses,
                     r => r.MapFrom(t => clientService.GetMaritalStatuses().Select(y => y.Status))));
             return Mapper.Map<Client, Client>(client);
@@ -75,15 +75,15 @@ namespace WebApplication.Infrastructure
                 .ForMember(r => r.Disability, r => r.MapFrom(t => t.Disability.Status))
                 .ForMember(r => r.Citizenship, r => r.MapFrom(t => t.Citizenship.Country))
                 .ForMember(r => r.MaritalStatus, r => r.MapFrom(t => t.MartialStatus.Status))
-                .ForMember(r => r.ResidenceActualPlace, r => r.MapFrom(t => t.Town.Name))
+                .ForMember(r => r.ResidenceActualPlace, r => r.MapFrom(t => t.Place.Name))
                 .ForMember(r => r.DisabilityStatuses,
                     r => r.MapFrom(t => clientService.GetDisabilities().Select(y => y.Status)))
                 .ForMember(r => r.Gender,
                     r => r.MapFrom(t => t.Male))
                 .ForMember(r => r.Citizenships,
                     r => r.MapFrom(t => clientService.GetCitizenships().Select(y => y.Country)))
-                .ForMember(r => r.Towns,
-                    r => r.MapFrom(t => clientService.GetTowns().Select(y => y.Name)))
+                .ForMember(r => r.Places,
+                    r => r.MapFrom(t => clientService.GetPlaces().Select(y => y.Name)))
                 .ForMember(r => r.MartialStatuses,
                     r => r.MapFrom(t => clientService.GetMaritalStatuses().Select(y => y.Status))));
             return Mapper.Map<ClientModel, Client>(client);
@@ -98,10 +98,10 @@ namespace WebApplication.Infrastructure
                         r =>
                             r.MapFrom(
                                 t => clientService.GetDisabilities().FirstOrDefault(y => y.Status == t.Disability)))
-                    .ForMember(r => r.Town,
+                    .ForMember(r => r.Place,
                         r =>
                             r.MapFrom(
-                                t => clientService.GetTowns().FirstOrDefault(y => y.Name == t.ResidenceActualPlace)))
+                                t => clientService.GetPlaces().FirstOrDefault(y => y.Name == t.ResidenceActualPlace)))
                     .ForMember(r => r.Male,
                         r =>
                             r.MapFrom(

@@ -20,7 +20,7 @@ namespace ORMLibrary
         public virtual DbSet<PlanOfCredit> PlanOfCredits { get; set; }
         public virtual DbSet<PlanOfDeposit> PlanOfDeposits { get; set; }
         public virtual DbSet<SystemInformation> SystemInformations { get; set; }
-        public virtual DbSet<Town> Towns { get; set; }
+        public virtual DbSet<Place> Places { get; set; }
         public virtual DbSet<Transaction> Transactions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -242,17 +242,17 @@ namespace ORMLibrary
                 .HasForeignKey(e => e.PlanId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Town>()
+            modelBuilder.Entity<Place>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Town>()
+            modelBuilder.Entity<Place>()
                 .Property(e => e.Country)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Town>()
+            modelBuilder.Entity<Place>()
                 .HasMany(e => e.Clients)
-                .WithRequired(e => e.Town)
+                .WithRequired(e => e.Place)
                 .HasForeignKey(e => e.ResidenceActualPlaceId)
                 .WillCascadeOnDelete(false);
 

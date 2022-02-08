@@ -14,8 +14,8 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[FK_Client_Martial
 ALTER TABLE [Client] DROP CONSTRAINT [FK_Client_MartialStatus]
 ;
 
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[FK_Client_Town]') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1) 
-ALTER TABLE [Client] DROP CONSTRAINT [FK_Client_Town]
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[FK_Client_Place]') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1) 
+ALTER TABLE [Client] DROP CONSTRAINT [FK_Client_Place]
 ;
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[FK_Credit_Account]') AND OBJECTPROPERTY(id, 'IsForeignKey') = 1) 
@@ -118,8 +118,8 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[SystemVariables]'
 DROP TABLE [SystemVariables]
 ;
 
-IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[Town]') AND OBJECTPROPERTY(id, 'IsUserTable') = 1) 
-DROP TABLE [Town]
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[Place]') AND OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [Place]
 ;
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id('[Transaction]') AND OBJECTPROPERTY(id, 'IsUserTable') = 1) 
@@ -257,7 +257,7 @@ CREATE TABLE [SystemVariables]
 )
 ;
 
-CREATE TABLE [Town]
+CREATE TABLE [Place]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
 	[Name] varchar(50) NOT NULL,
@@ -337,8 +337,8 @@ ALTER TABLE [SystemVariables]
 	PRIMARY KEY CLUSTERED ([Id])
 ;
 
-ALTER TABLE [Town] 
- ADD CONSTRAINT [PK_Town]
+ALTER TABLE [Place] 
+ ADD CONSTRAINT [PK_Place]
 	PRIMARY KEY CLUSTERED ([Id])
 ;
 
@@ -363,8 +363,8 @@ ALTER TABLE [Client] ADD CONSTRAINT [FK_Client_MartialStatus]
 	FOREIGN KEY ([MaritalStatusId]) REFERENCES [MartialStatus] ([Id]) ON DELETE No Action ON UPDATE No Action
 ;
 
-ALTER TABLE [Client] ADD CONSTRAINT [FK_Client_Town]
-	FOREIGN KEY ([ResidenceActualPlaceId]) REFERENCES [Town] ([Id]) ON DELETE No Action ON UPDATE No Action
+ALTER TABLE [Client] ADD CONSTRAINT [FK_Client_Place]
+	FOREIGN KEY ([ResidenceActualPlaceId]) REFERENCES [Place] ([Id]) ON DELETE No Action ON UPDATE No Action
 ;
 
 ALTER TABLE [Credit] ADD CONSTRAINT [FK_Credit_Account]

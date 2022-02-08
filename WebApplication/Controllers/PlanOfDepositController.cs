@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using BL.Services.Deposit;
-using BL.Services.Deposit.Models;
+using Services.Deposit;
+using Services.Deposit.Models;
 using Microsoft.Practices.Unity;
 using WebApplication.Infrastructure;
 using WebApplication.Models.ViewModels;

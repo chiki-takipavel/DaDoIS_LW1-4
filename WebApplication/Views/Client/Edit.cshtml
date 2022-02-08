@@ -1,34 +1,32 @@
 ﻿@model WebApplication.Models.ViewModels.Client
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Редактировать клиента";
 }
 
-<h2>Edit</h2>
-
+<h2>Редактировать клиента</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-    <h4>Client</h4>
     <hr/>
     @Html.ValidationSummary(true, "", new {@class = "text-danger"})
     @Html.HiddenFor(model => model.Id)
-    <div class="form-group">
-        @Html.LabelFor(model => model.Name, htmlAttributes: new {@class = "control-label col-md-2"})
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Name, new {htmlAttributes = new {@class = "form-control"}})
-            @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
-        </div>
-    </div>
-
     <div class="form-group">
         @Html.LabelFor(model => model.Surname, htmlAttributes: new {@class = "control-label col-md-2"})
         <div class="col-md-10">
             @Html.EditorFor(model => model.Surname, new {htmlAttributes = new {@class = "form-control"}})
             @Html.ValidationMessageFor(model => model.Surname, "", new {@class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new {@class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
         </div>
     </div>
 
@@ -55,22 +53,22 @@
             {
                 <div class="radio">
                     @Html.RadioButtonFor(model => model.Gender, "true", new { @checked = true })
-                    <text>Male</text>
+                    <text>Мужской</text>
                 </div>
                 <div class="radio">
                     @Html.RadioButtonFor(model => model.Gender, "false")
-                    <text>Female</text>
+                    <text>Женский</text>
                 </div>
             }
             else
             {
                 <div class="radio">
                     @Html.RadioButtonFor(model => model.Gender, "true")
-                    <text>Male</text>
+                    <text>Мужской</text>
                 </div>
                 <div class="radio">
                     @Html.RadioButtonFor(model => model.Gender, "false", new { @checked = true })
-                    <text>Female</text>
+                    <text>Женский</text>
                 </div>
             }
             @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
@@ -128,7 +126,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.ResidenceActualPlace, htmlAttributes: new {@class = "control-label col-md-2"})
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.ResidenceActualPlace, Model.Towns.Select(e => new SelectListItem()
+            @Html.DropDownListFor(model => model.ResidenceActualPlace, Model.Places.Select(e => new SelectListItem()
             {
                 Text = e,
                 Value = e,
@@ -233,14 +231,14 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default"/>
+            <input type="submit" value="Изменить" class="btn btn-default"/>
         </div>
     </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Вернуться к списку", "Index")
 </div>
 
 @section Scripts {

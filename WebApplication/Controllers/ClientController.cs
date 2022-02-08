@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using WebApplication.Models.ViewModels;
-using BL.Services.Client;
+using Services.Client;
 using Microsoft.Practices.Unity;
 using WebApplication.Infrastructure;
 using ValidationException = System.ComponentModel.DataAnnotations.ValidationException;
@@ -63,7 +63,9 @@ namespace WebApplication.Controllers
             return View(Mapper.Map<Client, Client>(client));
         }
 
+
         // GET: Client/Edit/5
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S4144:Methods should not have identical implementations", Justification = "<Pending>")]
         public ActionResult Edit(int id)
         {
             var client = ClientService.Get(id);
@@ -95,7 +97,9 @@ namespace WebApplication.Controllers
             return View(client.ToClient(ClientService));
         }
 
+
         // GET: Client/Delete/5
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S4144:Methods should not have identical implementations", Justification = "<Pending>")]
         public ActionResult Delete(int id)
         {
             var client = ClientService.Get(id);

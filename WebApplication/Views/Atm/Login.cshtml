@@ -1,10 +1,10 @@
 ﻿@model WebApplication.Models.ViewModels.AtmLoginModel
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Войти";
 }
 
-<h2>Login</h2>
+<h2>Войти</h2>
 
 @using (Html.BeginForm("Login", "Atm"))
 {
@@ -39,5 +39,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to home", "Index", "Home")
+    @Html.ActionLink("Вернуться на домашнюю страницу", "Index", "Home")
 </div>

@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using BL.Services.Credit;
-using BL.Services.Credit.Models;
+using Services.Credit;
+using Services.Credit.Models;
 using Microsoft.Practices.Unity;
 using WebApplication.Infrastructure;
 using WebApplication.Models.ViewModels;

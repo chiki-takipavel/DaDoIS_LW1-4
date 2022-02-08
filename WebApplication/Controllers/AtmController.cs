@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
-using BL.Services.ATM;
-using BL.Services.Credit;
+using Services.ATM;
+using Services.Credit;
 using Microsoft.Practices.Unity;
 using WebApplication.Infrastructure;
 using WebApplication.Models.ViewModels;
@@ -56,13 +53,13 @@ namespace WebApplication.Controllers
         public ActionResult WithdrawMoney(int creditId, decimal amount)
         {
             AtmService.WithDrawMoney(creditId, amount);
-            return RedirectToAction("WorkPage", new {creditId = creditId});
+            return RedirectToAction("WorkPage", new { creditId });
         }
 
         public ActionResult TransferMoney(int creditId, string accountNumber, decimal amount)
         {
             AtmService.TransferMoney(creditId, accountNumber, amount);
-            return RedirectToAction("WorkPage", new {creditId = creditId});
+            return RedirectToAction("WorkPage", new { creditId });
         }
     }
 }
