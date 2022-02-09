@@ -109,12 +109,12 @@ namespace WebApplication.Models.ViewModels
         [RegularExpression(@"^(0|\d{0,16}(\,\d{0,2})?)$", ErrorMessage = "Ежемесячный доход должен иметь формат: #.##")]
         public decimal MonthlyIncome { get; set; }
 
-        public IEnumerable<string> Places { get; set; }
+        public IEnumerable<string> Places { get; set; } = new List<string>();
 
-        public IEnumerable<string> Citizenships { get; set; }
+        public IEnumerable<string> Citizenships { get; set; } = new List<string>();
 
-        public IEnumerable<string> MartialStatuses { get; set; }
+        public IEnumerable<string> MartialStatuses { get; set; } = new List<string>();
 
-        public IEnumerable<string> DisabilityStatuses { get; set; }
+        public IEnumerable<string> DisabilityStatuses { get; set; } = new List<string>();
     }
 }

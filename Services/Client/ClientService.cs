@@ -38,7 +38,7 @@ namespace Services.Client
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Ошибка во время добавления нового клиента!", ex);
+                throw new ServiceException($"Ошибка во время добавления нового клиента! {ex.Message}", ex);
             }
         }
 
@@ -97,7 +97,7 @@ namespace Services.Client
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Ошибка во время изменения данных клиента!", ex);
+                throw new ServiceException($"Ошибка во время изменения данных клиента! {ex.Message}", ex);
             }
         }
 

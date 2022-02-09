@@ -57,9 +57,10 @@ namespace WebApplication.Controllers
                 catch (Exception ex)
                 {
                     ModelState.AddModelError("", ex.Message);
-                    return View(Mapper.Map<Client, Client>(client));
+                    return View(new Client().ToClient(ClientService));
                 }
             }
+
             return View(Mapper.Map<Client, Client>(client));
         }
 
