@@ -67,49 +67,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Account\Models\AccountNotFoundException.cs" />
-    <Compile Include="Common\BankService.cs" />
-    <Compile Include="Common\ISystemInformationService.cs" />
-    <Compile Include="Common\Model\AccountReportModel.cs" />
-    <Compile Include="Common\Model\SystemInformationModel.cs" />
-    <Compile Include="Common\Model\TransactionReportModel.cs" />
-    <Compile Include="Credit\IPlanOfCreditService.cs" />
-    <Compile Include="Credit\Models\PlanOfPaymentModel.cs" />
-    <Compile Include="Credit\PlanOfCreditService.cs" />
-    <Compile Include="Deposit\IPlanOfDepositService.cs" />
-    <Compile Include="Deposit\PlanOfDepositService.cs" />
-    <Compile Include="Transaction\Models\InsufficientFundsException.cs" />
-    <Compile Include="ATM\AtmService.cs" />
-    <Compile Include="ATM\IAtmService.cs" />
     <Compile Include="Client\ClientService.cs" />
     <Compile Include="Client\IClientService.cs" />
     <Compile Include="Client\Models\CitizenshipModel.cs" />
     <Compile Include="Client\Models\ClientModel.cs" />
-    <Compile Include="Account\AccountService.cs" />
-    <Compile Include="Account\IAccountService.cs" />
-    <Compile Include="Account\IPlanOfAccountService.cs" />
-    <Compile Include="Account\Models\AccountModel.cs" />
-    <Compile Include="Account\Models\PlanOfAccountModel.cs" />
-    <Compile Include="Account\PlanOfAccountService.cs" />
     <Compile Include="Client\Models\DisabilityModel.cs" />
     <Compile Include="Client\Models\MaritalStatusModel.cs" />
     <Compile Include="Client\Models\PlaceModel.cs" />
     <Compile Include="Client\Models\ValidationException.cs" />
-    <Compile Include="Common\SystemInformationService.cs" />
-    <Compile Include="Common\IBankService.cs" />
     <Compile Include="Common\Model\ServiceException.cs" />
-    <Compile Include="Credit\CreditService.cs" />
-    <Compile Include="Credit\ICreditService.cs" />
-    <Compile Include="Credit\Models\CreditModel.cs" />
-    <Compile Include="Credit\Models\PlanOfCreditModel.cs" />
-    <Compile Include="Deposit\DepositService.cs" />
-    <Compile Include="Deposit\IDepositService.cs" />
-    <Compile Include="Deposit\Models\DepositModel.cs" />
-    <Compile Include="Deposit\Models\PlanOfDepositModel.cs" />
     <Compile Include="BaseService.cs" />
-    <Compile Include="Transaction\ITransactionService.cs" />
-    <Compile Include="Transaction\Models\TransactionModel.cs" />
-    <Compile Include="Transaction\TransactionService.cs" />
     <Compile Include="Utilities\MappingRegistrar.cs" />
   </ItemGroup>
   <ItemGroup>

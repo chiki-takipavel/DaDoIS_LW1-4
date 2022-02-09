@@ -10,8 +10,6 @@ namespace ORMLibrary
     {
         public Client()
         {
-            Credits = new HashSet<Credit>();
-            Deposits = new HashSet<Deposit>();
         }
 
         public int Id { get; set; }
@@ -93,9 +91,5 @@ namespace ORMLibrary
         public virtual MartialStatus MartialStatus { get; set; }
 
         public virtual Place Place { get; set; }
-
-        public virtual ICollection<Credit> Credits { get; set; }
-
-        public virtual ICollection<Deposit> Deposits { get; set; }
     }
 }

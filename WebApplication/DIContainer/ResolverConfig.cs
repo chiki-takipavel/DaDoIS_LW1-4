@@ -1,10 +1,4 @@
-﻿using Services.Account;
-using Services.ATM;
-using Services.Client;
-using Services.Common;
-using Services.Credit;
-using Services.Deposit;
-using Services.Transaction;
+﻿using Services.Client;
 using Microsoft.Practices.Unity;
 using AppContext = ORMLibrary.AppContext;
 
@@ -35,16 +29,6 @@ namespace WebApplication.DIContainer
 
             #region Services
 
-            kernel.RegisterType<IPlanOfAccountService, PlanOfAccountService>();
-            kernel.RegisterType<IAccountService, AccountService>();           
-            kernel.RegisterType<IAtmService, AtmService>();
-            kernel.RegisterType<IBankService, BankService>();
-            kernel.RegisterType<ISystemInformationService, SystemInformationService>();
-            kernel.RegisterType<ICreditService, CreditService>();
-            kernel.RegisterType<IPlanOfCreditService, PlanOfCreditService>();
-            kernel.RegisterType<IDepositService, DepositService>();
-            kernel.RegisterType<IPlanOfDepositService, PlanOfDepositService>();
-            kernel.RegisterType<ITransactionService, TransactionService>();
             kernel.RegisterType<IClientService, ClientService>();
 
             #endregion

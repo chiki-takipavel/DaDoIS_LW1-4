@@ -146,29 +146,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
-    <Compile Include="Controllers\AtmController.cs" />
-    <Compile Include="Controllers\BankController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
-    <Compile Include="Controllers\CreditController.cs" />
-    <Compile Include="Controllers\DepositController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PlanOfCreditController.cs" />
-    <Compile Include="Controllers\PlanOfDepositController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\MappingRegistrar.cs" />
-    <Compile Include="Models\ViewModels\AtmAccountModel.cs" />
-    <Compile Include="Models\ViewModels\AtmLoginModel.cs" />
     <Compile Include="Models\ViewModels\Client.cs" />
-    <Compile Include="Models\ViewModels\CreateCreditModel.cs" />
-    <Compile Include="Models\ViewModels\CreateDepositModel.cs" />
-    <Compile Include="Models\ViewModels\Credit.cs" />
-    <Compile Include="Models\ViewModels\Deposit.cs" />
-    <Compile Include="Models\ViewModels\PlanOfAccount.cs" />
-    <Compile Include="Models\ViewModels\PlanOfCredit.cs" />
-    <Compile Include="Models\ViewModels\PlanOfDeposit.cs" />
-    <Compile Include="Models\ViewModels\PlanOfPayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DIContainer\ResolverConfig.cs" />
   </ItemGroup>
@@ -317,22 +301,6 @@
     <Content Include="Views\Client\Create.cshtml" />
     <Content Include="Views\Client\Edit.cshtml" />
     <Content Include="Views\Client\Delete.cshtml" />
-    <Content Include="Views\Credit\Details.cshtml" />
-    <Content Include="Views\Credit\Index.cshtml" />
-    <Content Include="Views\Credit\Schedule.cshtml" />
-    <Content Include="Views\PlanOfCredit\Index.cshtml" />
-    <Content Include="Views\PlanOfDeposit\Index.cshtml" />
-    <Content Include="Views\Deposit\Details.cshtml" />
-    <Content Include="Views\Deposit\Index.cshtml" />
-    <Content Include="Views\PlanOfDeposit\Create.cshtml" />
-    <Content Include="Views\PlanOfCredit\Create.cshtml" />
-    <Content Include="Views\Deposit\Create.cshtml" />
-    <Content Include="Views\Credit\Create.cshtml" />
-    <Content Include="Views\Bank\Index.cshtml" />
-    <Content Include="Views\Bank\TransactionReport.cshtml" />
-    <Content Include="Views\Bank\AccountReport.cshtml" />
-    <Content Include="Views\Atm\Login.cshtml" />
-    <Content Include="Views\Atm\WorkPage.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
