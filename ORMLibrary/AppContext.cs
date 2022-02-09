@@ -27,7 +27,7 @@ namespace ORMLibrary
         {
             modelBuilder.Entity<Account>()
                 .Property(e => e.AccountNumber)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Account>()
                 .Property(e => e.DebitValue)
@@ -79,7 +79,7 @@ namespace ORMLibrary
 
             modelBuilder.Entity<Citizenship>()
                 .Property(e => e.Country)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Citizenship>()
                 .HasMany(e => e.Clients)
@@ -89,55 +89,55 @@ namespace ORMLibrary
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.Surname)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.Name)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.Patronymic)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.PassportSeries)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.PassportNumber)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.IssuedBy)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.IdentificationNumber)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.BirthPlace)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.ResidenceActualAddress)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.HomePhoneNumber)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.MobilePhoneNumber)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.Email)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.ResidenceAddress)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.MonthlyIncome)
@@ -159,7 +159,7 @@ namespace ORMLibrary
 
             modelBuilder.Entity<Credit>()
                 .Property(e => e.CreditCardPin)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Deposit>()
                 .Property(e => e.Amount)
@@ -167,7 +167,7 @@ namespace ORMLibrary
 
             modelBuilder.Entity<Disability>()
                 .Property(e => e.Status)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Disability>()
                 .HasMany(e => e.Clients)
@@ -176,7 +176,7 @@ namespace ORMLibrary
 
             modelBuilder.Entity<MartialStatus>()
                 .Property(e => e.Status)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<MartialStatus>()
                 .HasMany(e => e.Clients)
@@ -216,7 +216,7 @@ namespace ORMLibrary
 
             modelBuilder.Entity<PlanOfCredit>()
                 .Property(e => e.Name)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<PlanOfCredit>()
                 .Property(e => e.MinAmount)
@@ -230,7 +230,7 @@ namespace ORMLibrary
 
             modelBuilder.Entity<PlanOfDeposit>()
                 .Property(e => e.Name)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<PlanOfDeposit>()
                 .Property(e => e.MinAmount)
@@ -244,11 +244,11 @@ namespace ORMLibrary
 
             modelBuilder.Entity<Place>()
                 .Property(e => e.Name)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Place>()
                 .Property(e => e.Country)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Place>()
                 .HasMany(e => e.Clients)

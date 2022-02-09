@@ -130,7 +130,7 @@ CREATE TABLE [Account]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
 	[PlanId] int NOT NULL,
-	[AccountNumber] varchar(13) NOT NULL,
+	[AccountNumber] nvarchar(13) NOT NULL,
 	[DebitValue] money NOT NULL,
 	[CreditValue] money NOT NULL,
 	[Balance] money NOT NULL
@@ -140,30 +140,30 @@ CREATE TABLE [Account]
 CREATE TABLE [Citizenship]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
-	[Country] varchar(50) NOT NULL
+	[Country] nvarchar(50) NOT NULL
 )
 ;
 
 CREATE TABLE [Client]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
-	[Surname] varchar(50) NOT NULL,
-	[Name] varchar(50) NOT NULL,
-	[Patronymic] varchar(50) NOT NULL,
+	[Surname] nvarchar(50) NOT NULL,
+	[Name] nvarchar(50) NOT NULL,
+	[Patronymic] nvarchar(50) NOT NULL,
 	[BirthDate] date NOT NULL,
 	[Male] bit NOT NULL,
-	[PassportSeries] varchar(2) NOT NULL,
-	[PassportNumber] varchar(7) NOT NULL,
-	[IssuedBy] varchar(100) NOT NULL,
+	[PassportSeries] nvarchar(2) NOT NULL,
+	[PassportNumber] nvarchar(7) NOT NULL,
+	[IssuedBy] nvarchar(100) NOT NULL,
 	[IssueDate] date NOT NULL,
-	[IdentificationNumber] varchar(50) NOT NULL,
-	[BirthPlace] varchar(50) NOT NULL,
+	[IdentificationNumber] nvarchar(50) NOT NULL,
+	[BirthPlace] nvarchar(50) NOT NULL,
 	[ResidenceActualPlaceId] int NOT NULL,
-	[ResidenceActualAddress] varchar(50) NOT NULL,
-	[HomePhoneNumber] varchar(50),
-	[MobilePhoneNumber] varchar(50),
-	[Email] varchar(50),
-	[ResidenceAddress] varchar(100) NOT NULL,
+	[ResidenceActualAddress] nvarchar(50) NOT NULL,
+	[HomePhoneNumber] nvarchar(50),
+	[MobilePhoneNumber] nvarchar(50),
+	[Email] nvarchar(50),
+	[ResidenceAddress] nvarchar(100) NOT NULL,
 	[MaritalStatusId] int NOT NULL,
 	[CitezenshipId] int NOT NULL,
 	[DisabilityId] int NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE [Credit]
 	[Amount] money NOT NULL,
 	[MainAccountId] int NOT NULL,
 	[PercentAccountId] int NOT NULL,
-	[CreditCardPin] varchar(4)
+	[CreditCardPin] nvarchar(4)
 )
 ;
 
@@ -202,14 +202,14 @@ CREATE TABLE [Deposit]
 CREATE TABLE [Disability]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
-	[Status] varchar(50) NOT NULL
+	[Status] nvarchar(50) NOT NULL
 )
 ;
 
 CREATE TABLE [MartialStatus]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
-	[Status] varchar(50) NOT NULL
+	[Status] nvarchar(50) NOT NULL
 )
 ;
 
@@ -225,7 +225,7 @@ CREATE TABLE [PlanOfAccount]
 CREATE TABLE [PlanOfCredit]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
-	[Name] varchar(50) NOT NULL,
+	[Name] nvarchar(50) NOT NULL,
 	[BankDayPeriod] int NOT NULL,
 	[Percent] float NOT NULL,
 	[Anuity] bit NOT NULL,
@@ -238,7 +238,7 @@ CREATE TABLE [PlanOfCredit]
 CREATE TABLE [PlanOfDeposit]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
-	[Name] varchar(50) NOT NULL,
+	[Name] nvarchar(50) NOT NULL,
 	[BankDayPeriod] int NOT NULL,
 	[Percent] float NOT NULL,
 	[Revocable] bit NOT NULL,
@@ -260,8 +260,8 @@ CREATE TABLE [SystemVariables]
 CREATE TABLE [Place]
 (
 	[Id] int NOT NULL IDENTITY (1, 1),
-	[Name] varchar(50) NOT NULL,
-	[Country] varchar(50) NOT NULL
+	[Name] nvarchar(50) NOT NULL,
+	[Country] nvarchar(50) NOT NULL
 )
 ;
 
