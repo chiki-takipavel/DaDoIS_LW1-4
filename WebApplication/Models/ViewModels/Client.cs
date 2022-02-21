@@ -106,7 +106,7 @@ namespace WebApplication.Models.ViewModels
         public bool Pensioner { get; set; }
 
         [Display(Name = "Ежемесячный доход")]
-        [RegularExpression(@"^(0|\d{0,16}(\,\d{0,2})?)$", ErrorMessage = "Ежемесячный доход должен иметь формат: #.##")]
+        [RegularExpression(@"^(0|\d{0,16}(\.\d{0,2})?)$", ErrorMessage = "Ежемесячный доход должен иметь формат: #.##")]
         public decimal MonthlyIncome { get; set; }
 
         public IEnumerable<string> Places { get; set; } = new List<string>();
