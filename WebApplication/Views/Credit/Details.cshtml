@@ -1,15 +1,23 @@
 ﻿@model WebApplication.Models.ViewModels.Credit
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Детали договора";
 }
 
-<h2>Details</h2>
+<h2>Детали договора</h2>
 
 <div>
-    <h4>Credit</h4>
-    <hr />
+    <h4>Кредитный</h4>
+    <hr/>
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreditNumber)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.PlanOfCredit)
         </dt>
@@ -75,11 +83,11 @@
         </dd>
 
         <dt>
-            @("Payment Schedule")
+            @("График оплат")
         </dt>
 
         <dd>
-            @Html.ActionLink("Go to the schedule page", "PaymentSchedule", new { creditId = Model.Id })
+            @Html.ActionLink("Перейти к графику", "PaymentSchedule", new { creditId = Model.Id })
         </dd>
     </dl>
 </div>
@@ -91,7 +99,7 @@
             {
                 using (Html.BeginForm("CloseCredit", "Credit", new { creditId = Model.Id }, FormMethod.Post))
                 {
-                    <button class="btn btn-default" type="submit">Close deposit</button>
+                    <button class="btn btn-default" type="submit">Закрыть депозит</button>
                 }
             }
         </div>
@@ -100,7 +108,7 @@
             {
                 using (Html.BeginForm("PayPercents", "Credit", new { creditId = Model.Id }, FormMethod.Post))
                 {
-                    <button class="btn btn-default" type="submit">Take percents</button>
+                    <button class="btn btn-default" type="submit">Взять процент</button>
                 }
             }
         </div>
@@ -108,5 +116,5 @@
 </div>
 
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Вернуться к списку", "Index")
 </p>

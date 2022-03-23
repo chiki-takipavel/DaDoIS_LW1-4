@@ -1,36 +1,30 @@
 ﻿@model Services.Common.Model.AccountReportModel
 
 @{
-    ViewBag.Title = "AccountReport";
+    ViewBag.Title = "План счетов";
 }
 
-<h2>AccountReport</h2>
+<h2>План счетов</h2>
 
-<p>@Html.ActionLink("Go to bank page", "Index") @*| @Html.ActionLink("Go to transaction report page", "DayTransactionsReport") | @Html.ActionLink("Go to previous day transaction report page", "PreviousDayTransactionsReport")*@</p>
+<p>@Html.ActionLink("Вернуться на страницу банка", "Index") @*| @Html.ActionLink("Go to transaction report page", "DayTransactionsReport") | @Html.ActionLink("Go to previous day transaction report page", "PreviousDayTransactionsReport")*@</p>
 
-<h3>Development Fund Account</h3>
+<h3>Счёт фонда развития</h3>
 <table class="table">
     <tr>
         <th>
-            @("Account Id")
+            @("Номер счёта")
         </th>
         <th>
-            @("Account Number")
+            @("Дебет")
         </th>
         <th>
-            @("Debit")
+            @("Кредит")
         </th>
         <th>
-            @("Credit")
-        </th>
-        <th>
-            @("Balance")
+            @("Баланс")
         </th>
     </tr>
     <tr>
-        <td>
-            @Html.DisplayFor(model => model.DevelopmentFundAccount.Id)
-        </td>
         <td>
             @Html.DisplayFor(model => model.DevelopmentFundAccount.AccountNumber)
         </td>
@@ -45,29 +39,23 @@
         </td>
     </tr>
 </table>
-<h3>Cash desk Account</h3>
+<h3>Касса банка</h3>
 <table class="table">
     <tr>
         <th>
-            @("Account Id")
+            @("Номер счёта")
         </th>
         <th>
-            @("Account Number")
+            @("Дебет")
         </th>
         <th>
-            @("Debit")
+            @("Кредит")
         </th>
         <th>
-            @("Credit")
-        </th>
-        <th>
-            @("Balance")
+            @("Баланс")
         </th>
     </tr>
     <tr>
-        <td>
-            @Html.DisplayFor(model => model.CashdeskAccount.Id)
-        </td>
         <td>
             @Html.DisplayFor(model => model.CashdeskAccount.AccountNumber)
         </td>
@@ -82,26 +70,23 @@
         </td>
     </tr>
 </table>
-<h3>Credit Accounts</h3>
+<h3>Кредитные счета</h3>
 <table class="table">
     <tr>
         <th>
-            @("Account Id")
+            @("Номер аккаунта")
         </th>
         <th>
-            @("Account Number")
+            @("Тип")
         </th>
         <th>
-            @("Type")
+            @("Дебет")
         </th>
         <th>
-            @("Debit")
+            @("Кредит")
         </th>
         <th>
-            @("Credit")
-        </th>
-        <th>
-            @("Balance")
+            @("Баланс")
         </th>
     </tr>
     @foreach (var credit in Model.Credits)
@@ -109,13 +94,10 @@
         string style = credit.Amount == 0 ? "grey" : "";
         <tr style="background-color: @style">
             <td>
-                @Html.DisplayFor(modelItem => credit.MainAccount.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => credit.MainAccount.AccountNumber)
             </td>
             <td>
-                @("Main")
+                @("Основной")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => credit.MainAccount.DebitValue)
@@ -129,13 +111,10 @@
         </tr>
         <tr style="background-color: @style">
             <td>
-                @Html.DisplayFor(modelItem => credit.PercentAccount.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => credit.PercentAccount.AccountNumber)
             </td>
             <td>
-                @("Percent")
+                @("Процентный")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => credit.PercentAccount.DebitValue)
@@ -149,26 +128,23 @@
         </tr>
     }
 </table>
-<h3>Deposit Accounts</h3>
+<h3>Депозитные счета</h3>
 <table class="table">
     <tr>
         <th>
-            @("Account Id")
+            @("Номер счёта")
         </th>
         <th>
-            @("Account Number")
+            @("Тип")
         </th>
         <th>
-            @("Type")
+            @("Дебет")
         </th>
         <th>
-            @("Debit")
+            @("Кредит")
         </th>
         <th>
-            @("Credit")
-        </th>
-        <th>
-            @("Balance")
+            @("Баланс")
         </th>
     </tr>
     @foreach (var deposit in Model.Deposits)
@@ -176,13 +152,10 @@
         string style = deposit.Amount == 0 ? "grey" : "";
         <tr style="background-color: @style">
             <td>
-                @Html.DisplayFor(modelItem => deposit.MainAccount.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => deposit.MainAccount.AccountNumber)
             </td>
             <td>
-                @("Main")
+                @("Основной")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => deposit.MainAccount.DebitValue)
@@ -196,13 +169,10 @@
         </tr>
         <tr style="background-color: @style">
             <td>
-                @Html.DisplayFor(modelItem => deposit.PercentAccount.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => deposit.PercentAccount.AccountNumber)
             </td>
             <td>
-                @("Percent")
+                @("Процентный")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => deposit.PercentAccount.DebitValue)

@@ -57,7 +57,7 @@ namespace Services.Account
             Context.Accounts.AddRange(new List<ORMLibrary.Account>()
             {
                 CreateBaseAccounts("1010", 0, 0),
-                CreateBaseAccounts("7327", 0, 10000000)
+                CreateBaseAccounts("7327", 0, 100000000000)
             });
 
             Context.SaveChanges();

@@ -1,6 +1,7 @@
 namespace ORMLibrary
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Deposit")]
@@ -11,6 +12,10 @@ namespace ORMLibrary
         public int ClientId { get; set; }
 
         public int PlanId { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string DepositNumber { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime StartDate { get; set; }

@@ -4,6 +4,7 @@ using Services.Account;
 using Services.Credit.Models;
 using Microsoft.Practices.Unity;
 using ORMLibrary;
+using Services.Common.Model;
 
 namespace Services.Credit
 {

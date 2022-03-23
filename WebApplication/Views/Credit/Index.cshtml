@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebApplication.Models.ViewModels.Credit>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Договоры";
 }
 
-<h2>Index</h2>
+<h2>Договоры</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create") | @Html.ActionLink("Go to credit plans page", "Index", "PlanOfCredit")
+    @Html.ActionLink("Создать новый договор ", "Create") | @Html.ActionLink(" Перейти на страницу кредитных планов", "Index", "PlanOfCredit")
 </p>
 <table class="table">
     <tr>
@@ -38,7 +38,7 @@
                 @Html.DisplayFor(modelItem => item.Amount)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new {creditId = item.Id})
+                @Html.ActionLink("Детали", "Details", new {creditId = item.Id})
             </td>
         </tr>
     }

@@ -15,6 +15,10 @@ namespace ORMLibrary
 
         public int PlanId { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string CreditNumber { get; set; }
+
         [Column(TypeName = "date")]
         public DateTime StartDate { get; set; }
 

@@ -15,7 +15,7 @@ namespace WebApplication.Controllers
         [Dependency]
         public IPlanOfDepositService PlanService { get; set; }
 
-        public IMapper Mapper { get; set; } =MappingRegistrar.CreareMapper();
+        public IMapper Mapper { get; set; } = MappingRegistrar.CreareMapper();
 
         public ActionResult Index()
         {

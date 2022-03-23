@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Services.Account.Models;
+using Services.Common.Model;
 
 namespace Services.Deposit.Models
 {

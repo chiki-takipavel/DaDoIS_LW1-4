@@ -154,11 +154,19 @@ namespace ORMLibrary
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Credit>()
+                .Property(e => e.CreditNumber)
+                .IsUnicode(true);
+
+            modelBuilder.Entity<Credit>()
                 .Property(e => e.Amount)
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Credit>()
                 .Property(e => e.CreditCardPin)
+                .IsUnicode(true);
+
+            modelBuilder.Entity<Deposit>()
+                .Property(e => e.DepositNumber)
                 .IsUnicode(true);
 
             modelBuilder.Entity<Deposit>()

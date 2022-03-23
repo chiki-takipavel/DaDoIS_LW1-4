@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace WebApplication.Models.ViewModels
 {
@@ -8,18 +9,21 @@ namespace WebApplication.Models.ViewModels
         [HiddenInput]
         public int Id { get; set; }
 
+        public int CurrencyId { get; set; }
+
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "Name")]
+        [Display(Name = "Название")]
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Time period(in days)")]
+        [Display(Name = "Период (в днях)")]
         public int DayPeriod { get; set; }
 
         [Required]
-        [Display(Name = "Percent a year")]
+        [Display(Name = "Процентов в год")]
         public double Percent { get; set; }
 
+        [Display(Name = "Отзывной")]
         public bool Revocable { get; set; }
 
         [HiddenInput]

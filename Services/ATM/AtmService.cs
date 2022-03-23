@@ -35,12 +35,12 @@ namespace Services.ATM
                 throw new ServiceException("Not enough money in the account.");
             }
 
-            TransactionService.CommitTransaction(credit.MainAccount,AccountService.GetCashDeskAccount(), amount);
+            TransactionService.CommitTransaction(credit.MainAccount, AccountService.GetCashDeskAccount(), amount);
             TransactionService.WithDrawCashDeskTransaction(amount);
             Context.SaveChanges();
         }
 
-        public void TransferMoney(int creditId, string accountNumber , decimal amount)
+        public void TransferMoney(int creditId, string accountNumber, decimal amount)
         {
             var credit = Context.Credits.FirstOrDefault(e => e.Id == creditId);
             var account = Context.Accounts.FirstOrDefault(e => e.AccountNumber == accountNumber);

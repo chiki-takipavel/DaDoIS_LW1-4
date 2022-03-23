@@ -9,6 +9,7 @@ namespace Services.Credit.Models
         public int Id { get; set; }
         public int ClientId { get; set; }
         public int PlanId { get; set; }
+        public string CreditNumber { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public decimal Amount { get; set; }

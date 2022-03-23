@@ -1,21 +1,29 @@
 ﻿@model WebApplication.Models.ViewModels.Deposit
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Детали договора";
 }
 
-<h2>Details</h2>
+<h2>Детали договора</h2>
 
 <div>
-    <h4>Deposit</h4>
+    <h4>Депозитный</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepositNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepositNumber)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.PlanOfDeposit)
         </dt>
 
         <dd>
-            @($"{Model.PlanOfDeposit.Name} with {Model.PlanOfDeposit.Percent}% per year")
+            @($"{Model.PlanOfDeposit.Name} ({Model.PlanOfDeposit.Percent}% в год)")
         </dd>
 
         <dt>
@@ -23,7 +31,7 @@
         </dt>
 
         <dd>
-            @Html.ActionLink($"{Model.Client.Surname} {Model.Client.Name} {Model.Client.Patronymic}", "Details", "Client",new { id = Model.Client.Id}, new {})
+            @Html.ActionLink($"{Model.Client.Surname} {Model.Client.Name} {Model.Client.Patronymic}", "Details", "Client", new { id = Model.Client.Id }, new { })
         </dd>
 
         <dt>
@@ -73,7 +81,7 @@
     {
         using (Html.BeginForm("CloseDeposit", "Deposit", new {depositId = Model.Id}, FormMethod.Post))
         {
-            <button class="btn btn-default" type="submit">Close deposit</button>
+            <button class="btn btn-default" type="submit">Закрыть депозит</button>
         }
     }
 </p>
@@ -82,10 +90,10 @@
     {
         using (Html.BeginForm("TakePercents", "Deposit", new { depositId = Model.Id }, FormMethod.Post))
         {
-            <button class="btn btn-default" type="submit">Take percents</button>
+            <button class="btn btn-default" type="submit">Снять проценты</button>
         }
     }
 </p>
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Вернуться к списку договоров", "Index")
 </p>

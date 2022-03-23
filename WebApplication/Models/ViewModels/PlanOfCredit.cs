@@ -9,17 +9,18 @@ namespace WebApplication.Models.ViewModels
         public int Id { get; set; }
 
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "Name")]
+        [Display(Name = "Название")]
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Time period(in monthes)")]
+        [Display(Name = "Период (в месяцах)")]
         public int MonthPeriod { get; set; }
 
         [Required]
-        [Display(Name = "Percent a year")]
+        [Display(Name = "Процентов в год")]
         public double Percent { get; set; }
 
+        [Display(Name = "Аннуитетный")]
         public bool Anuity { get; set; }
 
         [HiddenInput]

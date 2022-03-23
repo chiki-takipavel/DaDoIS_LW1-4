@@ -1,18 +1,18 @@
 ﻿@model WebApplication.Models.ViewModels.PlanOfPayment
 
 @{
-    ViewBag.Title = "Schedule";
+    ViewBag.Title = "График";
 }
 
-<h2>Schedule</h2>
+<h2>График</h2>
 
 <table class="table">
     <tr>
         <th>
-            @("Payment day")
+            @("Дата платежа")
         </th>
         <th>
-            @("Payment amount")
+            @("К оплате")
         </th>
     </tr>
 
@@ -30,5 +30,5 @@
     }
 </table>
 <p>
-    @Html.ActionLink("Back to credit details", "Details", new { creditId = Model.CreditId })
+    @Html.ActionLink("Вернуться к списку", "Details", new { creditId = Model.CreditId })
 </p>

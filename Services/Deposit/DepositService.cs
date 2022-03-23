@@ -37,6 +37,7 @@ namespace Services.Deposit
 
             var dbDeposit = Mapper.Map<DepositModel, ORMLibrary.Deposit>(deposit);
 
+            dbDeposit.DepositNumber = deposit.DepositNumber;
             dbDeposit.PlanOfDeposit = Context.PlanOfDeposits.FirstOrDefault(e => e.Id == deposit.PlanId);
             dbDeposit.Client = Context.Clients.FirstOrDefault(e => e.Id == deposit.ClientId);
             AccountService.CreateAccountsForDeposit(dbDeposit);

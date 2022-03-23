@@ -81,6 +81,12 @@ namespace Services.Client
                     throw new ServiceException("Пользователь не найден!");
                 }
 
+                if (Context.Clients.Any(e => e.Id != client.Id && e.IdentificationNumber == client.IdentificationNumber))
+                    throw new ValidationException("Пользователь с таким идентификационным номером уже существует!");
+                if (Context.Clients.Any(
+                        e => e.Id != client.Id && e.PassportNumber == client.PassportNumber && e.PassportSeries == client.PassportSeries))
+                    throw new ValidationException("Пользователь с такими серией и номером паспорта уже существует!");
+
                 Mapper.Map(client, dbClient);
 
                 dbClient.Disability = Context.Disabilities.First(e => e.Id == client.Disability.Id);
@@ -90,10 +96,6 @@ namespace Services.Client
 
                 Context.Entry(dbClient).State = EntityState.Modified;
                 Context.SaveChanges();
-            }
-            catch (ServiceException)
-            {
-                throw;
             }
             catch (Exception ex)
             {

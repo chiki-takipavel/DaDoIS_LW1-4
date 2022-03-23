@@ -37,6 +37,7 @@ namespace Services.Credit
 
             var dbCredit = Mapper.Map<CreditModel, ORMLibrary.Credit>(credit);
 
+            dbCredit.CreditNumber = credit.CreditNumber;
             dbCredit.PlanOfCredit = Context.PlanOfCredits.FirstOrDefault(e => e.Id == credit.PlanId);
             dbCredit.Client = Context.Clients.FirstOrDefault(e => e.Id == credit.ClientId);
             AccountService.CreateAccountsForCredit(dbCredit);
@@ -196,7 +197,7 @@ namespace Services.Credit
                 throw new SystemException("Credit already have been closed.");
             }
 
-            if (!credit.PlanOfCredit.Anuity)
+            //if (!credit.PlanOfCredit.Anuity)
             {
                 TransactionService.CommitCashDeskDebitTransaction(
                     credit.Amount
